@@ -1,0 +1,146 @@
+@font-face {
+  font-family: JhengHei;
+  src: local("Microsoft JhengHei");
+}
+
+:root {
+  --color-title: #336;
+  --color-sub-title: #999;
+  --color-icon: #81adbb;
+  --color-title-filter: invert(22%) sepia(28%) saturate(916%) hue-rotate(201deg) brightness(97%) contrast(104%);
+  --color-icon-filter: invert(46%) sepia(60%) saturate(270%) hue-rotate(148deg) brightness(90%) contrast(81%);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+.main {
+  width: 794px;
+  height: 1123px;
+  padding: 2rem;
+}
+.main > div {
+  margin-bottom: 1rem;
+}
+.title-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.title-wrap > .name-wrap {
+  font-family: JhengHei;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--color-title);
+}
+.title-wrap > .connect-wrap {
+  color: var(--color-title);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.title-wrap > .connect-wrap > div {
+  display: flex;
+  align-items: center;
+}
+.title-wrap > .connect-wrap > div > img {
+  width: 1.5rem;
+  padding-right: 1rem;
+  filter: var(--color-icon-filter);
+}
+.title-wrap > .connect-wrap > div > div {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.introduction-wrap {
+  display: flex;
+  align-items: center;
+}
+.introduction-wrap > .photo-wrap > img {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  background-color: #ccc;
+  box-shadow: 5px 5px 10px #666;
+}
+
+.introduction-wrap > .introduction-text {
+  font-family: JhengHei;
+  line-height: 1.5rem;
+  padding: 1rem 0 0 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.introduction-wrap > .introduction-text > div {
+  text-indent: 2em;
+  padding-bottom: 5px;
+}
+
+.sub-title-wrap {
+  display: flex;
+}
+.sub-title-wrap > img {
+  width: 1.5rem;
+  padding-right: 1rem;
+  filter: var(--color-icon-filter);
+}
+.sub-title-wrap > div {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-title);
+}
+
+.skill-wrap {
+  border-bottom: 3px solid var(--color-icon);
+  padding: 0.5rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+.skill-wrap > div {
+  border-top: 3px solid var(--color-icon);
+  width: calc(100% / 3 - 1rem);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.skill-wrap > div > .skill-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 0.5rem 0;
+}
+.skill-wrap > div > .skill-text {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.job-wrap {
+  margin-left: 1rem;
+}
+
+.job-wrap > .job-object {
+  padding-top: 1rem;
+}
+.job-wrap > .job-object > .job-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding-left: 1.5rem;
+}
+.job-wrap > .job-object > .job-sub-title {
+  padding-left: 1.5rem;
+  color: var(--color-sub-title);
+}
+.job-wrap > .job-object > ul {
+  margin: 0;
+}
+.job-wrap > .job-object > ul > li {
+  padding-top: 5px;
+}
+
+.education-wrap {
+  margin-left: 1rem;
+}
+.education-wrap > ul > li {
+  line-height: 1.5rem;
+}
