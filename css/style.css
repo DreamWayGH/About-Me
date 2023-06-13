@@ -9,6 +9,15 @@
   --color-icon: #81adbb;
   --color-title-filter: invert(22%) sepia(28%) saturate(916%) hue-rotate(201deg) brightness(97%) contrast(104%);
   --color-icon-filter: invert(46%) sepia(60%) saturate(270%) hue-rotate(148deg) brightness(90%) contrast(81%);
+	--color-cover: #fff9;
+	--color-border: #999;
+	--color-shadow: #ccc;
+	--color-btn: #aaf;
+	--color-btn-hover: #99f;
+	--color-bg: #fff;
+	--color-btn-filter: invert(84%) sepia(59%) saturate(2177%) hue-rotate(188deg) brightness(101%) contrast(99%);
+	--color-btn-hover-filter: invert(61%) sepia(10%) saturate(2062%) hue-rotate(201deg) brightness(101%) contrast(103%);
+	--color-bg-filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(11deg) brightness(102%) contrast(100%);
 }
 
 body {
@@ -16,6 +25,7 @@ body {
   justify-content: center;
 }
 .main {
+	font-family: JhengHei;
   width: 794px;
   height: 1123px;
   padding: 2rem;
@@ -143,4 +153,70 @@ body {
 }
 .education-wrap > ul > li {
   line-height: 1.5rem;
+}
+
+.link-btn {
+	width: 1em;
+	cursor: pointer;
+	padding: 0 1rem;
+	filter: var(--color-btn-filter);
+}
+.link-btn:hover {
+	filter: var(--color-btn-hover-filter);
+}
+
+.flow-cover {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: var(--color-cover);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.hidden-wrap{
+	display: none;
+}
+.flow-cover > .flow-wrap {
+	position: relative;
+	padding: 2rem;
+	border: 0.1rem solid var(--color-border);
+	border-radius: 1rem;
+	box-shadow: 0 0 0.5rem #ccc;
+	background-color: var(--color-bg);
+}
+.flow-cover > .flow-wrap > .info-title{
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: var(--color-title);
+}
+.flow-cover > .flow-wrap > .info-body{
+}
+.close-btn {
+	position: absolute;
+	right: -1rem;
+	top: -1rem;
+	padding: 0.5rem;
+	border-radius: 50%;
+	background-color: var(--color-btn);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+.close-btn:hover{
+	background-color: var(--color-btn-hover);
+}
+.close-btn > img {
+	width: 1rem;
+  height: 1rem;
+	filter: var(--color-bg-filter);
+}
+
+@media print {
+  .link-btn {
+    display: none;
+  }
 }
