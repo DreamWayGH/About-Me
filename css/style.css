@@ -18,6 +18,7 @@
 	--color-btn-filter: invert(84%) sepia(59%) saturate(2177%) hue-rotate(188deg) brightness(101%) contrast(99%);
 	--color-btn-hover-filter: invert(61%) sepia(10%) saturate(2062%) hue-rotate(201deg) brightness(101%) contrast(103%);
 	--color-bg-filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(11deg) brightness(102%) contrast(100%);
+	/*svg顏色 https://codepen.io/sosuke/pen/Pjoqqp */
 }
 
 body {
@@ -191,9 +192,9 @@ body {
 	font-size: 1.5rem;
 	font-weight: bold;
 	color: var(--color-title);
+  padding-bottom: 1rem;
 }
-.flow-cover > .flow-wrap > .info-body{
-}
+
 .close-btn {
 	position: absolute;
 	right: -1rem;
@@ -205,6 +206,7 @@ body {
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
+  user-select: none;
 }
 .close-btn:hover{
 	background-color: var(--color-btn-hover);
@@ -213,10 +215,83 @@ body {
 	width: 1rem;
   height: 1rem;
 	filter: var(--color-bg-filter);
+  user-select: none;
+}
+
+.phopo-viewer {
+  display: flex;
+  align-items: center;
+}
+.phopo-viewer > .switch-btn {
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin: 0.5rem 0.5rem 3.5rem 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  user-select: none;
+	display: flex;
+}
+.phopo-viewer > .switch-btn > img{
+	width: 1.5rem;
+	filter: var(--color-btn-filter);
+}
+.phopo-viewer > .switch-btn > img:hover{
+	filter: var(--color-btn-hover-filter);
+}
+.phopo-viewer > .photo-wrap {
+  position: relative;
+  width: 30vw;
+  height: calc(30vw + 3.6rem);
+  overflow: hidden;
+}
+.photo-object {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-bg);
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.photo-object:nth-child(1) {
+  z-index: 1;
+}
+.photo-object.hide {
+  opacity: 0;
+	pointer-events: none;
+}
+.photo-object > .photo-title {
+  font-size: 1rem;
+  padding-top: 1rem;
+  max-width: 30vw;
+	height: 2.6rem;
+}
+.photo-object > .photo-img {
+  width: 30vw;
+  height: 30vw;
+  object-fit: contain;
+}
+
+.photo-title > a:visited {
+  color: #00f;
 }
 
 @media print {
   .link-btn {
     display: none;
   }
+}
+
+/* 橫向螢幕樣式 */
+@media (orientation: landscape) {
+	.phopo-viewer > .photo-wrap {
+    width: 80vh;
+    height: calc(80vh - 10rem);
+	}
+	.photo-object > .photo-img {
+    width: 80vh;
+    height: calc(80vh - 14rem);
+	}
 }

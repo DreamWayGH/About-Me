@@ -9,6 +9,11 @@ window.onload = function () {
 	closeBtns.forEach((btn) => {
 		btn.addEventListener('click', closeLinkWrap);
 	})
+	
+	const switchBtns = document.querySelectorAll('.switch-btn');
+	switchBtns.forEach((btn) => {
+		btn.addEventListener('click', switchNextPage);
+	})
 }
 
 function openLinkWrap(){
@@ -24,4 +29,30 @@ function closeLinkWrap() {
 	wraps.forEach((wrap) => {
 		wrap.classList.add('hidden-wrap');
 	})	
+}
+
+function switchNextPage() {
+	const photoWrap = this.parentNode.querySelector('.photo-wrap');
+  if(photoWrap == null) return;
+  const type = this.dataset.type;
+  const children = photoWrap.children;
+  const index = parseInt(photoWrap.dataset.index);
+  const maxIndex = children.length - 1;
+  let newIndex = 0;
+  if(type == 'left') {
+  	newIndex = index <= 0 ? maxIndex : index - 1;
+  }
+  else {
+  	newIndex = index >= maxIndex ? 0 : index + 1;
+  }
+
+  photoWrap.dataset.index = newIndex;
+  Array.from(children).forEach((child, i) => {
+  	if(i == newIndex){
+    	child.classList.remove('hide');
+    }
+    else {
+    	child.classList.add('hide');
+    }
+  })
 }
