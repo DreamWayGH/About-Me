@@ -1,3 +1,14 @@
+/**
+ * HTML結構解析完成後立即執行的程式碼
+ */
+document.addEventListener('DOMContentLoaded', function() { 
+	//生成經歷區塊左側時間軸
+  createHistoryLine();
+});
+
+/**
+ * 圖片等資源全部載入完才執行的程式碼
+ */
 window.onload = function () {
   //彈跳視窗按紐
   const linkBtns = document.querySelectorAll(".link-btn");
