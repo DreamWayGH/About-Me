@@ -14,6 +14,11 @@ window.onload = function () {
 	switchBtns.forEach((btn) => {
 		btn.addEventListener('click', switchNextPage);
 	})
+	
+	const photos = document.querySelectorAll('.photo-object > .photo-img');
+	photos.forEach((photo) => {
+		photo.addEventListener('click', openPhoto);
+	})
 }
 
 function openLinkWrap(){
@@ -55,4 +60,9 @@ function switchNextPage() {
     	child.classList.add('hide');
     }
   })
+}
+
+function openPhoto(){
+	const url = this.src;
+	window.open(url, '_blank');
 }
