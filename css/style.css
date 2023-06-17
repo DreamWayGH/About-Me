@@ -7,18 +7,24 @@
   --color-title: #336;
   --color-sub-title: #999;
   --color-icon: #81adbb;
-  --color-title-filter: invert(22%) sepia(28%) saturate(916%) hue-rotate(201deg) brightness(97%) contrast(104%);
-  --color-icon-filter: invert(46%) sepia(60%) saturate(270%) hue-rotate(148deg) brightness(90%) contrast(81%);
-	--color-cover: #fff9;
-	--color-border: #999;
-	--color-shadow: #ccc;
-	--color-btn: #aaf;
-	--color-btn-hover: #99f;
-	--color-bg: #fff;
-	--color-btn-filter: invert(84%) sepia(59%) saturate(2177%) hue-rotate(188deg) brightness(101%) contrast(99%);
-	--color-btn-hover-filter: invert(61%) sepia(10%) saturate(2062%) hue-rotate(201deg) brightness(101%) contrast(103%);
-	--color-bg-filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(11deg) brightness(102%) contrast(100%);
-	/*svg顏色 https://codepen.io/sosuke/pen/Pjoqqp */
+  --color-cover: #fff9;
+  --color-border: #999;
+  --color-shadow: #ccc;
+  --color-btn: #aaf;
+  --color-btn-hover: #99f;
+  --color-bg: #fff;
+  --color-line: #81adbb;
+  --color-title-filter: invert(22%) sepia(28%) saturate(916%) hue-rotate(201deg)
+    brightness(97%) contrast(104%);
+  --color-icon-filter: invert(46%) sepia(60%) saturate(270%) hue-rotate(148deg)
+    brightness(90%) contrast(81%);
+  --color-btn-filter: invert(84%) sepia(59%) saturate(2177%) hue-rotate(188deg)
+    brightness(101%) contrast(99%);
+  --color-btn-hover-filter: invert(61%) sepia(10%) saturate(2062%)
+    hue-rotate(201deg) brightness(101%) contrast(103%);
+  --color-bg-filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(11deg)
+    brightness(102%) contrast(100%);
+  /*svg顏色 https://codepen.io/sosuke/pen/Pjoqqp */
 }
 
 body {
@@ -26,7 +32,7 @@ body {
   justify-content: center;
 }
 .main {
-	font-family: JhengHei;
+  font-family: JhengHei;
   width: 794px;
   height: 1123px;
   padding: 2rem;
@@ -127,6 +133,7 @@ body {
 }
 
 .job-wrap {
+  position: relative;
   margin-left: 1rem;
 }
 
@@ -149,6 +156,27 @@ body {
   padding-top: 5px;
 }
 
+.history-line-wrap {
+  position: absolute;
+  top: 0;
+  left: -0.6rem;
+}
+.history-line-wrap > .history-point {
+  position: absolute;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background-color: var(--color-line);
+}
+.history-line-wrap > .history-line{
+  position: absolute;
+  top: 1.4rem;
+  left: 0.3rem;
+  width: 0.2rem;
+  border-radius: 0.1rem;
+  background-color: var(--color-line);
+}
+
 .education-wrap {
   margin-left: 1rem;
 }
@@ -157,66 +185,66 @@ body {
 }
 
 .link-btn {
-	width: 1em;
-	cursor: pointer;
-	padding: 0 1rem;
-	filter: var(--color-btn-filter);
+  width: 1em;
+  cursor: pointer;
+  padding: 0 1rem;
+  filter: var(--color-btn-filter);
 }
 .link-btn:hover {
-	filter: var(--color-btn-hover-filter);
+  filter: var(--color-btn-hover-filter);
 }
 
 .flow-cover {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: var(--color-cover);
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-cover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.hidden-wrap{
-	display: none;
+.hidden-wrap {
+  display: none;
 }
 .flow-cover > .flow-wrap {
-	position: relative;
-	padding: 2rem;
-	border: 0.1rem solid var(--color-border);
-	border-radius: 1rem;
-	box-shadow: 0 0 0.5rem #ccc;
-	background-color: var(--color-bg);
+  position: relative;
+  padding: 2rem;
+  border: 0.1rem solid var(--color-border);
+  border-radius: 1rem;
+  box-shadow: 0 0 0.5rem #ccc;
+  background-color: var(--color-bg);
 }
-.flow-cover > .flow-wrap > .info-title{
-	font-size: 1.5rem;
-	font-weight: bold;
-	color: var(--color-title);
+.flow-cover > .flow-wrap > .info-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-title);
   padding-bottom: 1rem;
 }
 
 .close-btn {
-	position: absolute;
-	right: -1rem;
-	top: -1rem;
-	padding: 0.5rem;
-	border-radius: 50%;
-	background-color: var(--color-btn);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	cursor: pointer;
+  position: absolute;
+  right: -1rem;
+  top: -1rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--color-btn);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
   user-select: none;
-	transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
-.close-btn:hover{
-	background-color: var(--color-btn-hover);
-	transform: rotate(90deg);
+.close-btn:hover {
+  background-color: var(--color-btn-hover);
+  transform: rotate(90deg);
 }
 .close-btn > img {
-	width: 1rem;
+  width: 1rem;
   height: 1rem;
-	filter: var(--color-bg-filter);
+  filter: var(--color-bg-filter);
   user-select: none;
 }
 
@@ -231,14 +259,14 @@ body {
   border-radius: 50%;
   cursor: pointer;
   user-select: none;
-	display: flex;
+  display: flex;
 }
-.phopo-viewer > .switch-btn > img{
-	width: 1.5rem;
-	filter: var(--color-btn-filter);
+.phopo-viewer > .switch-btn > img {
+  width: 1.5rem;
+  filter: var(--color-btn-filter);
 }
-.phopo-viewer > .switch-btn > img:hover{
-	filter: var(--color-btn-hover-filter);
+.phopo-viewer > .switch-btn > img:hover {
+  filter: var(--color-btn-hover-filter);
 }
 .phopo-viewer > .photo-wrap {
   position: relative;
@@ -262,24 +290,25 @@ body {
 }
 .photo-object.hide {
   opacity: 0;
-	pointer-events: none;
+  pointer-events: none;
 }
 .photo-object > .photo-title {
   font-size: 1rem;
   padding-top: 1rem;
   max-width: 30vw;
-	height: 2.6rem;
+  height: 2.6rem;
 }
 .photo-object > .photo-img {
   width: calc(30vw - 2px);
   height: 30vw;
   object-fit: contain;
-	border: 1px solid #ccc;
-	border-radius: 1rem;
-	cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+  cursor: pointer;
 }
 
-.photo-title > a:visited {
+.info-body a,
+.info-body a:visited {
   color: #00f;
 }
 
@@ -291,12 +320,12 @@ body {
 
 /* 橫向螢幕樣式 */
 @media (orientation: landscape) {
-	.phopo-viewer > .photo-wrap {
+  .phopo-viewer > .photo-wrap {
     width: 80vh;
     height: calc(80vh - 10rem);
-	}
-	.photo-object > .photo-img {
+  }
+  .photo-object > .photo-img {
     width: calc(80vh - 2px);
     height: calc(80vh - 14rem);
-	}
+  }
 }
