@@ -1,21 +1,34 @@
 window.onload = function () {
+	//彈跳視窗按紐
 	const linkBtns = document.querySelectorAll('.link-btn');
 	linkBtns.forEach((btn) => {
 		btn.src = 'img/link-solid.svg';
 		btn.addEventListener('click', openLinkWrap);
 	})
 	
+	//關閉彈掉視窗按紐
 	const closeBtns = document.querySelectorAll('.close-btn');
 	closeBtns.forEach((btn) => {
 		btn.addEventListener('click', closeLinkWrap);
 	})
 	
+	//切換照片按紐
 	const switchBtns = document.querySelectorAll('.switch-btn');
 	switchBtns.forEach((btn) => {
 		btn.addEventListener('click', switchNextPage);
 	})
+	
+	//圖片超連結
+	const photos = document.querySelectorAll('.photo-object > .photo-img');
+	photos.forEach((photo) => {
+		photo.addEventListener('click', openPhoto);
+	})
+	
 }
 
+/**
+ * 開啟彈跳視窗
+ */
 function openLinkWrap(){
 	const id = this.dataset.id;
 	if(id != null) {
@@ -24,6 +37,9 @@ function openLinkWrap(){
 	}
 }
 
+/**
+ * 關閉彈跳視窗
+ */
 function closeLinkWrap() {
 	const wraps = document.querySelectorAll(`.flow-cover`);
 	wraps.forEach((wrap) => {
@@ -31,6 +47,9 @@ function closeLinkWrap() {
 	})	
 }
 
+/**
+ * 切換照片
+ */
 function switchNextPage() {
 	const photoWrap = this.parentNode.querySelector('.photo-wrap');
   if(photoWrap == null) return;
@@ -55,4 +74,12 @@ function switchNextPage() {
     	child.classList.add('hide');
     }
   })
+}
+
+/**
+ * 另開照片視窗
+ */
+function openPhoto(){
+	const url = this.src;
+	window.open(url, '_blank');
 }

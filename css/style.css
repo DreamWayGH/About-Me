@@ -207,9 +207,11 @@ body {
 	justify-content: center;
 	cursor: pointer;
   user-select: none;
+	transition: transform 0.2s ease-in-out;
 }
 .close-btn:hover{
 	background-color: var(--color-btn-hover);
+	transform: rotate(90deg);
 }
 .close-btn > img {
 	width: 1rem;
@@ -269,9 +271,12 @@ body {
 	height: 2.6rem;
 }
 .photo-object > .photo-img {
-  width: 30vw;
+  width: calc(30vw - 2px);
   height: 30vw;
   object-fit: contain;
+	border: 1px solid #ccc;
+	border-radius: 1rem;
+	cursor: pointer;
 }
 
 .photo-title > a:visited {
@@ -291,7 +296,7 @@ body {
     height: calc(80vh - 10rem);
 	}
 	.photo-object > .photo-img {
-    width: 80vh;
+    width: calc(80vh - 2px);
     height: calc(80vh - 14rem);
 	}
 }
