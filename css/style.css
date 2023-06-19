@@ -294,7 +294,7 @@ body {
 }
 .photo-object > .photo-title {
   font-size: 1rem;
-  padding-top: 1rem;
+  padding: 1rem;
   max-width: 30vw;
   height: 2.6rem;
 }
