@@ -271,7 +271,7 @@ body {
 .phopo-viewer > .photo-wrap {
   position: relative;
   width: 30vw;
-  height: calc(30vw + 3.6rem);
+  height: calc(30vw + 3.8rem);
   overflow: hidden;
 }
 .photo-object {
@@ -294,7 +294,7 @@ body {
 }
 .photo-object > .photo-title {
   font-size: 1rem;
-  padding: 1rem;
+  padding-top: 1rem;
   max-width: 30vw;
   height: 2.6rem;
 }
