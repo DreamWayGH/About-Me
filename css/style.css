@@ -34,11 +34,34 @@ body {
 .main {
   font-family: JhengHei;
   width: 794px;
-  height: 1123px;
   padding: 2rem;
 }
 .main > div {
   margin-bottom: 1rem;
+}
+.langrage-wrap {
+	display: flex;
+	justify-content: flex-end;
+}
+.langrage-wrap > div {
+	width: 20px;
+	border-radius: 5px;
+	padding: 0 5px;
+	margin: 0 5px;
+	color: var(--color-bg);
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.langrage-wrap > .this-lan {
+	background-color: var(--color-btn);
+}
+.langrage-wrap > .other-lan {
+	background-color: var(--color-shadow);
+}
+.langrage-wrap > .other-lan:hover {
+	background-color: var(--color-border);
 }
 .title-wrap {
   width: 100%;
@@ -314,6 +337,9 @@ body {
 }
 
 @media print {
+	.langrage-wrap {
+    display: none;
+  }
   .link-btn {
     display: none;
   }

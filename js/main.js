@@ -34,6 +34,17 @@ window.onload = function () {
   photos.forEach((photo) => {
     photo.addEventListener("click", openPhoto);
   });
+	
+	//語言切換
+	const thisLan = localStorage.getItem("language");
+	const lanBtns = document.querySelectorAll(".langrage-wrap > div");
+  lanBtns.forEach((lanBtn) => {
+		//語言按鈕燈亮
+		if(lanBtn.dataset.lan == thisLan) lanBtn.classList.add('this-lan')
+		else lanBtn.classList.add('other-lan')
+		//語言切換事件
+    lanBtn.addEventListener("click", channgeLanguage);
+  });
 
   //生成經歷區塊左側時間軸
   createHistoryLine();
@@ -97,6 +108,21 @@ function switchNextPage() {
 function openPhoto() {
   const url = this.src;
   window.open(url, "_blank");
+}
+
+/**
+ * 切換語言
+ */
+function channgeLanguage() {
+	const newLan = this.dataset.lan;
+	const thisLan = localStorage.getItem("language");
+	if(newLan != thisLan) {
+		const newPage = newLan == 'zh-tw' ? 'index.html' : `index_${newLan}.html`
+		const href = document.location.href;
+		const thisPage = href.split('/')[href.split('/').length - 1];
+		const newHref = href.replace(thisPage, newPage);
+		document.location.href = newHref;
+	}
 }
 
 /**
