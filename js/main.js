@@ -4,6 +4,27 @@
 document.addEventListener('DOMContentLoaded', function() { 
 	//生成經歷區塊左側時間軸
   createHistoryLine();
+	
+	window.addEventListener('resize', function() {
+		createHistoryLine();
+	});
+	
+	//語言切換
+	const thisLan = localStorage.getItem("language");
+	const lanBtns = document.querySelectorAll(".langrage-wrap > div");
+  lanBtns.forEach((lanBtn) => {
+		//語言按鈕燈亮
+		if(lanBtn.dataset.lan == thisLan) lanBtn.classList.add('this-lan')
+		else lanBtn.classList.add('other-lan')
+		//語言切換事件
+    lanBtn.addEventListener("click", channgeLanguage);
+  });
+	
+	//附錄圖片超連結
+	const appendixs = document.querySelectorAll(".appendix-object > .photo-img");
+  appendixs.forEach((appendix) => {
+    appendix.addEventListener("click", openPhoto);
+  });
 });
 
 /**
@@ -34,28 +55,6 @@ window.onload = function () {
   photos.forEach((photo) => {
     photo.addEventListener("click", openPhoto);
   });
-	const appendixs = document.querySelectorAll(".appendix-object > .photo-img");
-  appendixs.forEach((appendix) => {
-    appendix.addEventListener("click", openPhoto);
-  });
-	
-	//語言切換
-	const thisLan = localStorage.getItem("language");
-	const lanBtns = document.querySelectorAll(".langrage-wrap > div");
-  lanBtns.forEach((lanBtn) => {
-		//語言按鈕燈亮
-		if(lanBtn.dataset.lan == thisLan) lanBtn.classList.add('this-lan')
-		else lanBtn.classList.add('other-lan')
-		//語言切換事件
-    lanBtn.addEventListener("click", channgeLanguage);
-  });
-
-  //生成經歷區塊左側時間軸
-  createHistoryLine();
-
-	window.addEventListener('resize', function() {
-		createHistoryLine();
-	});
 };
 
 /**
@@ -124,7 +123,7 @@ function channgeLanguage() {
 		const newPage = newLan == 'zh-tw' ? 'index.html' : `index_${newLan}.html`
 		const href = document.location.href;
 		const thisPage = href.split('/')[href.split('/').length - 1];
-		const newHref = href.replace(thisPage, newPage);
+		const newHref = thisPage == '' ? href + newPage : href.replace(thisPage, newPage);
 		document.location.href = newHref;
 	}
 }
