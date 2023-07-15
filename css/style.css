@@ -207,6 +207,33 @@ body {
   line-height: 1.5rem;
 }
 
+.appendix-wrap {
+	padding-top: 1rem;
+	display: flex;
+	display: flex;    
+	flex-direction: row;
+  flex-wrap: wrap;
+}
+.appendix-wrap > .appendix-object {
+	width: calc(50% - 1rem);
+	padding: 0.5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.appendix-wrap > .appendix-object > .photo-img {
+	width: 100%;
+	height: calc(100% - 2rem);
+	object-fit: contain;
+	cursor: pointer;
+}
+.appendix-wrap > .appendix-object > .photo-title {
+	height: 2rem;
+	font-size: 1rem;
+  padding-top: 0.5rem;
+}
+
 .link-btn {
   width: 1em;
   cursor: pointer;
@@ -343,6 +370,9 @@ body {
   .link-btn {
     display: none;
   }
+	.page-break {
+		page-break-before: always;
+	}
 }
 
 /* 橫向螢幕樣式 */

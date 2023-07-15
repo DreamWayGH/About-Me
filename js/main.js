@@ -34,6 +34,10 @@ window.onload = function () {
   photos.forEach((photo) => {
     photo.addEventListener("click", openPhoto);
   });
+	const appendixs = document.querySelectorAll(".appendix-object > .photo-img");
+  appendixs.forEach((appendix) => {
+    appendix.addEventListener("click", openPhoto);
+  });
 	
 	//語言切換
 	const thisLan = localStorage.getItem("language");
